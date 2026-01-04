@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo "Cloning Git Repository"
-                git 'https://github.com/USERNAME/cicd-infra-demo.git'
+                git 'https://github.com/amitbichitkar/cloud-resources-using-jenkins.git'
             }
         }
 
