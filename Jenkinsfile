@@ -16,41 +16,39 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                dir('terraform') {
-                    sh 'terraform init'
-                }
+               sh 'terraform init'
             }
         }
 
         stage('Terraform Format') {
             steps {
-                dir('terraform') {
+                
                     sh 'terraform fmt'
                 }
-            }
-        }
+         }
+        
 
         stage('Terraform Validate') {
             steps {
-                dir('terraform') {
+                
                     sh 'terraform validate'
-                }
+                
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                dir('terraform') {
+             
                     sh 'terraform plan'
-                }
+                
             }
         }
 
         stage('Terraform Apply (Launch EC2)') {
             steps {
-                dir('terraform') {
+                 
                     sh 'terraform apply -auto-approve'
-                }
+                
             }
         }
 
